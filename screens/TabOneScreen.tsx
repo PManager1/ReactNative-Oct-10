@@ -1,59 +1,167 @@
-import * as React from 'react';
-import EditScreenInfo from '../components/EditScreenInfo';
+import React from 'react'
+import {
+  FlatList,
+  View,
+  ActivityIndicator,
+  TouchableOpacity
+} from 'react-native'
+import filter from 'lodash.filter'
+import { ApplicationProvider, Text, Avatar, Input } from '@ui-kitten/components'
+import { mapping, light as lightTheme } from '@eva-design/eva'
 
-import { SafeAreaView, View, FlatList, StyleSheet, Text, StatusBar } from 'react-native';
+class HomeScreen extends React.Component {
+  state = {
+    loading: false,
+    data: [],
+    page: 1,
+    seed: 1,
+    error: null,
+    query: '',
+    fullData: []
+  }
 
-const DATA = [
-  {
-    id: 'bd7acbea-c1b1-46c2-aed5-3ad53abb28ba',
-    title: 'First Item-2',
-  },
-  {
-    id: '3ac68afc-c605-48d3-a4f8-fbd91aa97f63',
-    title: 'Second Item',
-  },
-  {
-    id: '58694a0f-3da1-471f-bd96-145571e29d72',
-    title: 'Third Item',
-  },
-];
-// let title : any = null; 
+  componentDidMount() {
+    this.makeRemoteRequest()
+  }
 
-const Item = ({ title }) => (
-  <View style={styles.item}>
-    <Text style={styles.title}>{title}</Text>
-  </View>
-);
+  makeRemoteRequest = () => {
+    const { page, seed } = this.state
+    const url = `https://randomuser.me/api/?seed=${seed}&page=${page}&results=20`
+    this.setState({ loading: true })
 
-export default function TabOneScreen() {
-  const renderItem = ({ item }) => (
-    <Item title={item.title} />
-  );
+    fetch(url)
+      .then(res => res.json())
+      .then(res => {
+        this.setState({
+          data: page === 1 ? res.results : [...this.state.data, ...res.results],
+          error: res.error || null,
+          loading: false,
+          fullData: res.results
+        })
+      })
+      .catch(error => {
+        this.setState({ error, loading: false })
+      })
+  }
 
- return (
-    <SafeAreaView style={styles.container}>
-      <FlatList
-        data={DATA}
-        renderItem={renderItem}
-        keyExtractor={item => item.id}
+  contains = ({ name, email }, query) => {
+    const { first, last } = name
+    if (
+      first.includes(query) ||
+      last.includes(query) ||
+      email.includes(query)
+    ) {
+      return true
+    }
+    return false
+  }
+
+  handleSearch = text => {
+    const formattedQuery = text.toLowerCase()
+    const data = filter(this.state.fullData, user => {
+      return this.contains(user, formattedQuery)
+    })
+    this.setState({ data, query: text })
+  }
+
+  renderHeader = () => (
+    <View
+      style={{
+        backgroundColor: '#fff',
+        padding: 10,
+        alignItems: 'center',
+        justifyContent: 'center'
+      }}>
+      <Input
+        autoCapitalize='none'
+        autoCorrect={false}
+        onChangeText={this.handleSearch}
+        status='info'
+        placeholder='Search'
+        style={{
+          borderRadius: 25,
+          borderColor: '#333',
+          backgroundColor: '#fff'
+        }}
+        textStyle={{ color: '#000' }}
+        clearButtonMode='always'
       />
-    </SafeAreaView>
-  );
+    </View>
+  )
+
+  renderSeparator = () => {
+    return (
+      <View
+        style={{
+          height: 1,
+          width: '86%',
+          backgroundColor: '#CED0CE',
+          marginLeft: '5%'
+        }}
+      />
+    )
+  }
+
+  renderFooter = () => {
+    if (!this.state.loading) return null
+    return (
+      <View
+        style={{
+          paddingVertical: 20,
+          borderTopWidth: 1,
+          borderColor: '#CED0CE'
+        }}>
+        <ActivityIndicator animating size='large' />
+      </View>
+    )
+  }
+
+  render() {
+    return (
+      <View
+        style={{
+          flex: 1,
+          paddingHorizontal: 20,
+          paddingVertical: 20,
+          marginTop: 40
+        }}>
+        <FlatList
+          data={this.state.data}
+          renderItem={({ item }) => (
+            <TouchableOpacity onPress={() => alert('Item pressed!')}>
+              <View
+                style={{
+                  flexDirection: 'row',
+                  padding: 16,
+                  alignItems: 'center'
+                }}>
+                <Avatar
+                  source={{ uri: item.picture.thumbnail }}
+                  size='giant'
+                  style={{ marginRight: 16 }}
+                />
+                <Text
+                  category='s1'
+                  style={{
+                    color: '#000'
+                  }}>{`${item.name.first} ${item.name.last}`}</Text>
+              </View>
+            </TouchableOpacity>
+          )}
+          keyExtractor={item => item.email}
+          ItemSeparatorComponent={this.renderSeparator}
+          ListHeaderComponent={this.renderHeader}
+          ListFooterComponent={this.renderFooter}
+        />
+      </View>
+    )
+  }
 }
 
+const TabOneScreen = () => (
+  <ApplicationProvider mapping={mapping} theme={lightTheme}>
+    <HomeScreen />
+  </ApplicationProvider>
+)
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    marginTop: StatusBar.currentHeight || 0,
-  },
-  item: {
-    backgroundColor: '#f9c2ff',
-    padding: 20,
-    marginVertical: 8,
-    marginHorizontal: 16,
-  },
-  title: {
-    fontSize: 32,
-  },
-});
+export default TabOneScreen
