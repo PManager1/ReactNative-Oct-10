@@ -9,7 +9,6 @@ const DetailView = () => {
 
   return (<>
     <View>
-        <Form />
        <Text> Detail View </Text> 
     </View>
    </>
