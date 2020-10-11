@@ -63,6 +63,11 @@ const MainView = (props) => {
     type="outline"
   />
 
+<Button
+    title="Login "
+    type="outline"
+    onPress={() => navigation.navigate('LoginScreen')}
+  />
 
 </>
 

@@ -13,6 +13,8 @@ import LowPriority from '../screens/LowPriority';
 import MidPriority from '../screens/MidPriority';
 import DetailView from '../screens/DetailView';
 
+import LoginScreen from '../screens/LoginScreen';
+
 
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
@@ -69,11 +71,12 @@ function TabOneNavigator() {
     <TabOneStack.Navigator> 
       <TabOneStack.Screen name="MainView"
       options={{ headerTitle: 'Main View' }}
-      component={MainView} /> 
+      component={MainView} />  
       <TabOneStack.Screen name="TabOneScreen" component={TabOneScreen} />
       <TabOneStack.Screen name="HighPriority" component={HighPriority} />
       <TabOneStack.Screen name="MidPriority" component={MidPriority} />
       <TabOneStack.Screen name="DetailView" component={DetailView} />
+      <TabOneStack.Screen name="LoginScreen" component={LoginScreen} />
     </TabOneStack.Navigator>
   );
 }
