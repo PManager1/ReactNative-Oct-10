@@ -60,8 +60,6 @@ const MainView = (props) => {
     title="Call Back "
     type="outline"
   />
-
-  
    </>
   )
 }

@@ -137,7 +137,7 @@ class HomeScreen extends React.Component {
               {
                 console.log('133-props', this.props);
               // alert('Item pressed-here!')
-                  navigate('HighPriority')
+                  navigate('DetailView')
             }
             }>
               <View
