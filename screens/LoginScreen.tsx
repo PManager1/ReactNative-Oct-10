@@ -1,5 +1,4 @@
 // Bring in action from api etc here. 
-
 import React, { useState } from 'react';
 import Form from '../forms/Form';
 // import { login } from '../api/authentication';
@@ -12,7 +11,7 @@ import { Text, TextInput, View, StyleSheet } from 'react-native';
         
         const handleResult = async (result) => {
             if (result.ok && result.data) {
-              await setToken(result.data.auth_token);
+            //   await setToken(result.data.auth_token);
               navigation.navigate('Home');
             } else if (result.status === 401) {
               throw new Error('Invalid login.');

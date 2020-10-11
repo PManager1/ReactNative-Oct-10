@@ -9,8 +9,8 @@ https://scottdomes.com/react-native-sexy-forms/
 
 
 ==================================
-
-
+LOGIN SCREEN - 
+Make the ui in the middle fields. 
 
 ==================================
 
