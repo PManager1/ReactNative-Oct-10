@@ -33,16 +33,19 @@ const TabOneScreen = () => {
   <Button
     title="All Inbox "
     type="outline"
+    onPress={handleHelpPressAll} 
   />
 
 <Button
     title="Red Priority "
     type="outline"
+    onPress={handleHelpPressRed} 
   />
 
 <Button
     title="High Priority "
     type="outline"
+    onPress={handleHelpPressHigh} 
   />
 
 
@@ -61,16 +64,16 @@ const TabOneScreen = () => {
   )
 }
 
-export default TabOneScreen; 
+function handleHelpPressAll() {
+  console.log('click handleHelpPress'); 
+}
 
-// {
-//   list.map((item, i) => (
-//     <ListItem key={i} bottomDivider>
-//       <Icon name={item.icon} />
-//       <ListItem.Content>
-//         <ListItem.Title>{item.title}</ListItem.Title>
-//       </ListItem.Content>
-//       <ListItem.Chevron />
-//     </ListItem>
-//   ))
-// }
+function handleHelpPressRed() {
+  console.log('click handleHelpPress'); 
+}
+
+function handleHelpPressHigh() {
+  console.log('click handleHelpPress'); 
+}
+
+export default TabOneScreen; 
