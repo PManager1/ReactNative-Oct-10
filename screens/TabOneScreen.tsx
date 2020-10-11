@@ -121,7 +121,7 @@ class HomeScreen extends React.Component {
   }
 
   render(props) {
-    console.log('124 props =', props );
+    const { navigate } = this.props.props.navigation;
     return (
       <View
         style={{
@@ -137,7 +137,7 @@ class HomeScreen extends React.Component {
               {
                 console.log('133-props', this.props);
               // alert('Item pressed-here!')
-              this.props.props.navigation.navigate('HighPriority')
+                  navigate('HighPriority')
             }
             }>
               <View
