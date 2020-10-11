@@ -9,6 +9,10 @@ import filter from 'lodash.filter'
 import { ApplicationProvider, Text, Avatar, Input } from '@ui-kitten/components'
 import { mapping, light as lightTheme } from '@eva-design/eva'
 
+// import { withNavigations } from 'react-navigation';
+
+import { useNavigation } from '@react-navigation/native';
+
 class HomeScreen extends React.Component {
   state = {
     loading: false,
@@ -116,7 +120,8 @@ class HomeScreen extends React.Component {
     )
   }
 
-  render() {
+  render(props) {
+    console.log('124 props =', props );
     return (
       <View
         style={{
@@ -131,7 +136,8 @@ class HomeScreen extends React.Component {
             <TouchableOpacity onPress={() =>  
               {
                 console.log('133-props', this.props);
-              alert('Item pressed-here!')
+              // alert('Item pressed-here!')
+              this.props.props.navigation.navigate('HighPriority')
             }
             }>
               <View
@@ -163,10 +169,11 @@ class HomeScreen extends React.Component {
   }
 }
 
-const TabOneScreen = () => (
+const TabOneScreen = (props) => (
   <ApplicationProvider mapping={mapping} theme={lightTheme}>
-    <HomeScreen />
+    <HomeScreen props={props} />
   </ApplicationProvider>
 )
 
 export default TabOneScreen
+// export default withNavigation(TabOneScreen);
