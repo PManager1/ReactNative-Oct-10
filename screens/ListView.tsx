@@ -3,6 +3,7 @@ import { ListItem, Icon, Avatar } from 'react-native-elements'
 import { View, Text } from 'react-native'
 import { Button } from 'react-native-elements';
 
+import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 
 import {
   FlatList,
@@ -23,17 +24,18 @@ const list = [
 
 
 
-
-const TabOneScreen = () => {
+const TabOneScreen = (props) => {
   // console.log('23- inside TabOneScreen ListItem=', ListItem.Content);
-
+  console.log('props =', props); 
+  const { navigation } = props;
   
   return (<>
   
   <Button
     title="All Inbox "
     type="outline"
-    onPress={handleHelpPressAll} 
+    onPress={() => navigation.navigate('HighPriority')}
+    // onPress={handleHelpPressAll} 
   />
 
 <Button
@@ -66,6 +68,7 @@ const TabOneScreen = () => {
 
 function handleHelpPressAll() {
   console.log('click handleHelpPress'); 
+
 }
 
 function handleHelpPressRed() {

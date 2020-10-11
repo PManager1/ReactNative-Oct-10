@@ -7,7 +7,6 @@ import { Button } from 'react-native-elements';
 const HighPriority = () => {
   // console.log('23- inside HighPriority ListItem=', ListItem.Content);
 
-  
   return (<>
     <View>
         High Priorty

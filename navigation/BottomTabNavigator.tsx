@@ -8,6 +8,10 @@ import useColorScheme from '../hooks/useColorScheme';
 // import TabOneScreen from '../screens/TabOneScreen';
 import TabOneScreen from '../screens/ListView';
 
+import HighPriority from '../screens/HighPriority';
+import LowPriority from '../screens/LowPriority';
+import MidPriority from '../screens/MidPriority';
+
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
 
@@ -49,13 +53,21 @@ function TabBarIcon(props: { name: string; color: string }) {
 const TabOneStack = createStackNavigator<TabOneParamList>();
 
 function TabOneNavigator() {
+  // return (
+  //   <TabOneStack.Navigator>
+  //     <TabOneStack.Screen
+  //       name="TabOneScreen"
+  //       component={TabOneScreen}
+  //       options={{ headerTitle: 'Tab One Title' }}
+  //     />
+  //   </TabOneStack.Navigator>
+  // );
+
   return (
     <TabOneStack.Navigator>
-      <TabOneStack.Screen
-        name="TabOneScreen"
-        component={TabOneScreen}
-        options={{ headerTitle: 'Tab One Title' }}
-      />
+      <TabOneStack.Screen name="TabOneScreen" component={TabOneScreen} />
+      <TabOneStack.Screen name="HighPriority" component={HighPriority} />
+      <TabOneStack.Screen name="MidPriority" component={MidPriority} />
     </TabOneStack.Navigator>
   );
 }
