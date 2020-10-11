@@ -8,9 +8,6 @@ import {
 import filter from 'lodash.filter'
 import { ApplicationProvider, Text, Avatar, Input } from '@ui-kitten/components'
 import { mapping, light as lightTheme } from '@eva-design/eva'
-
-// import { withNavigations } from 'react-navigation';
-
 import { useNavigation } from '@react-navigation/native';
 
 class HomeScreen extends React.Component {
@@ -135,7 +132,7 @@ class HomeScreen extends React.Component {
           renderItem={({ item }) => (
             <TouchableOpacity onPress={() =>  
               {
-                console.log('133-props', this.props);
+                // console.log('133-props', this.props);
               // alert('Item pressed-here!')
                   navigate('DetailView')
             }

@@ -1,12 +1,14 @@
 import * as React from 'react'
-import { ListItem, Icon, Avatar } from 'react-native-elements'
-import { View, Text } from 'react-native'
+import { Icon, Avatar } from 'react-native-elements'
 import { Button } from 'react-native-elements';
 
-import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
+// import { ListItem } from 'react-native-elements'
 
+import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import {
+  View, Text,
   FlatList,
+  // ListItem,
   ActivityIndicator,
   TouchableOpacity
 } from 'react-native'
@@ -60,7 +62,17 @@ const MainView = (props) => {
     title="Call Back "
     type="outline"
   />
-   </>
+
+
+<FlatList
+  data={[{title: 'Title Text', key: 'item1'}]}
+  renderItem={({item}) => <ListItem title={item.title} />}
+/>
+
+
+</>
+
+
   )
 }
 
