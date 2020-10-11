@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Text, TextInput, View } from 'react-native';
+import { Text, TextInput, View, StyleSheet } from 'react-native';
 
 const getInitialState = (fieldKeys) => {
   const state = {};
@@ -35,3 +35,17 @@ const Form = ({ fields }) => {
 };
 
 export default Form;
+
+
+const styles = StyleSheet.create({
+  container: {
+    flex: 1,
+    alignItems: 'center',
+    justifyContent: 'center',
+    marginBottom: 15,
+  },
+  error: {
+    marginBottom: 20,
+    height: 17.5,
+  },
+});

@@ -1,13 +1,31 @@
+// Bring in action from api etc here. 
+
 import React, { useState } from 'react';
 import Form from '../forms/Form';
+// import { login } from '../api/authentication';
+// import { setToken } from '../api/token';
 
 import { Text, TextInput, View, StyleSheet } from 'react-native';
 
-
 // const LoginScreen = ({ navigation }) => {
-    const LoginScreen = () => {    
-        return (
+    const LoginScreen = () => {   
+        
+        const handleResult = async (result) => {
+            if (result.ok && result.data) {
+              await setToken(result.data.auth_token);
+              navigation.navigate('Home');
+            } else if (result.status === 401) {
+              throw new Error('Invalid login.');
+            } else {
+              throw new Error('Something went wrong.');
+            }
+          };
+
+          return (
             <Form
+            //   action={login}
+              afterSubmit={handleResult}
+              buttonText="Submit"
               fields={{
                 email: {
                   label: 'Email',
