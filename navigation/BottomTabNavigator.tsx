@@ -5,8 +5,8 @@ import * as React from 'react';
 
 import Colors from '../constants/Colors';
 import useColorScheme from '../hooks/useColorScheme';
-// import TabOneScreen from '../screens/TabOneScreen';
-import TabOneScreen from '../screens/ListView';
+import TabOneScreen from '../screens/TabOneScreen';
+import MainView from '../screens/MainView';
 
 import HighPriority from '../screens/HighPriority';
 import LowPriority from '../screens/LowPriority';
@@ -64,7 +64,8 @@ function TabOneNavigator() {
   // );
 
   return (
-    <TabOneStack.Navigator>
+    <TabOneStack.Navigator> 
+      <TabOneStack.Screen name="MainView" component={MainView} />
       <TabOneStack.Screen name="TabOneScreen" component={TabOneScreen} />
       <TabOneStack.Screen name="HighPriority" component={HighPriority} />
       <TabOneStack.Screen name="MidPriority" component={MidPriority} />

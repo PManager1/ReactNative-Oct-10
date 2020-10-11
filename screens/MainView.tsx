@@ -24,8 +24,8 @@ const list = [
 
 
 
-const TabOneScreen = (props) => {
-  // console.log('23- inside TabOneScreen ListItem=', ListItem.Content);
+const MainView = (props) => {
+  // console.log('23- inside MainView ListItem=', ListItem.Content);
   console.log('props =', props); 
   const { navigation } = props;
   
@@ -34,14 +34,14 @@ const TabOneScreen = (props) => {
   <Button
     title="All Inbox "
     type="outline"
-    onPress={() => navigation.navigate('HighPriority')}
-    // onPress={handleHelpPressAll} 
+    onPress={() => navigation.navigate('TabOneScreen')}
+
   />
 
 <Button
     title="Red Priority "
     type="outline"
-    onPress={handleHelpPressRed} 
+    onPress={() => navigation.navigate('HighPriority')}
   />
 
 <Button
@@ -79,4 +79,4 @@ function handleHelpPressHigh() {
   console.log('click handleHelpPress'); 
 }
 
-export default TabOneScreen; 
+export default MainView; 
