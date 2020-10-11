@@ -4,15 +4,14 @@ import { View, Text } from 'react-native'
 import { Button } from 'react-native-elements';
 
 
-const HighPriority = () => {
-  // console.log('23- inside HighPriority ListItem=', ListItem.Content);
+const DetailView = () => {
 
   return (<>
     <View>
-       <Text> High Priorty 2 </Text> 
+       <Text> Detail View </Text> 
     </View>
    </>
   )
 }
 
-export default HighPriority; 
+export default DetailView; 

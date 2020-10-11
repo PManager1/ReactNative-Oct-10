@@ -128,7 +128,12 @@ class HomeScreen extends React.Component {
         <FlatList
           data={this.state.data}
           renderItem={({ item }) => (
-            <TouchableOpacity onPress={() => alert('Item pressed!')}>
+            <TouchableOpacity onPress={() =>  
+              {
+                console.log('133-props', this.props);
+              alert('Item pressed-here!')
+            }
+            }>
               <View
                 style={{
                   flexDirection: 'row',
