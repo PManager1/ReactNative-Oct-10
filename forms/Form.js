@@ -25,14 +25,14 @@ const Form = ({ fields }) => {
   return fieldKeys.map((key) => {
     const field = fields[key];
     return (
-      <View key={key}>
-        <Text>{field.label}</Text>
-        <TextInput
-          {...field.inputProps}
+      <Field
+          key={key}
+          fieldName={key}
+          field={fields[key]}
+          // error={validationErrors[key]}
+          onChangeText={onChangeValue}
           value={values[key]}
-          onChangeText={(text) => onChangeValue(key, text)}
         />
-      </View>
     );
   });
 };
