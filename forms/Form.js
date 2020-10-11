@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Text, TextInput, View, StyleSheet } from 'react-native';
+import Field from './Field';
 
 const getInitialState = (fieldKeys) => {
   const state = {};
@@ -9,6 +10,8 @@ const getInitialState = (fieldKeys) => {
 
   return state;
 };
+
+// const Form = ({ fields, buttonText, action, afterSubmit }) => {
 
 const Form = ({ fields }) => {
   const fieldKeys = Object.keys(fields);
