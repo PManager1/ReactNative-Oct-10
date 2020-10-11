@@ -64,12 +64,6 @@ const MainView = (props) => {
   />
 
 
-<FlatList
-  data={[{title: 'Title Text', key: 'item1'}]}
-  renderItem={({item}) => <ListItem title={item.title} />}
-/>
-
-
 </>
 
 
