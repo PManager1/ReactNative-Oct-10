@@ -37,7 +37,12 @@ const MainView = (props) => {
     title="All Inbox "
     type="outline"
     onPress={() => navigation.navigate('TabOneScreen')}
+  />
 
+<Button
+    title="Login "
+    type="outline"
+    onPress={() => navigation.navigate('LoginScreen')}
   />
 
 <Button
@@ -63,11 +68,6 @@ const MainView = (props) => {
     type="outline"
   />
 
-<Button
-    title="Login "
-    type="outline"
-    onPress={() => navigation.navigate('LoginScreen')}
-  />
 
 </>
 
