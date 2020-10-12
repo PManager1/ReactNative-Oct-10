@@ -1,8 +1,6 @@
 import * as React from 'react'
-import { Icon, Avatar } from 'react-native-elements'
 import { Button } from 'react-native-elements';
-
-// import { ListItem } from 'react-native-elements'
+import { Avatar, Badge, Icon, withBadge } from 'react-native-elements'
 
 import { createBottomTabNavigator, createStackNavigator } from 'react-navigation';
 import {
@@ -33,11 +31,14 @@ const MainView = (props) => {
   
   return (<>
   
+<View>
   <Button
-    title="All Inbox "
+    title="All Inbox (make it Flat List"
     type="outline"
     onPress={() => navigation.navigate('TabOneScreen')}
-  />
+  />  
+  <Badge value="99+" status="primary" />
+  </View>
 
 <Button
     title="Login "

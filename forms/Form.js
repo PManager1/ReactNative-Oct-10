@@ -20,6 +20,7 @@ const fadeIn = () =>
   Animated.timing(opacity, { toValue: 1, duration: 200 }).start();
 
 const submit = async () => {
+  console.log('submit clicked and returned'); return;
   setErrorMessage('');
   setValidationErrors(getInitialState(fieldKeys));
 
