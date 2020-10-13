@@ -14,16 +14,10 @@ import {
 
 import CustomMultiPicker from "react-native-multiple-select-list";
 
-// import { Card, Input, CardSection, Button, Confirm } from '../../components/common';
-// import { propertyUpdate, propertySave, propertyUpdatePriority } from '../../actions';
-
 import Icon from 'react-native-vector-icons/Ionicons';
 
 
 export default class MultiSelector extends Component {
-
-  // const ChatScreen = ({ label, value, onChangeText, placeholder, secureTextEntry }) => {
-  //   const { inputStyle, labelStyle, containerStyle } = styles;
 
 
   constructor(props){
