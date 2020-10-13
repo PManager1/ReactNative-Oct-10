@@ -53,10 +53,17 @@ const MainView = (props) => {
   />
 
 <Button
+    title="Multi Selector "
+    type="outline"
+    onPress={() => navigation.navigate('MultiSelector')}
+  />
+
+<Button
     title="High Priority "
     type="outline"
     onPress={handleHelpPressHigh} 
   />
+
 
 
 <Button

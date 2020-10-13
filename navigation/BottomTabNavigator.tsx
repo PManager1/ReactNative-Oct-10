@@ -15,6 +15,8 @@ import DetailView from '../screens/DetailView';
 
 import LoginScreen from '../screens/LoginScreen';
 
+import MultiSelector from '../screens/Components/MultiSelector';
+
 
 import TabTwoScreen from '../screens/TabTwoScreen';
 import { BottomTabParamList, TabOneParamList, TabTwoParamList } from '../types';
@@ -77,6 +79,8 @@ function TabOneNavigator() {
       <TabOneStack.Screen name="MidPriority" component={MidPriority} />
       <TabOneStack.Screen name="DetailView" component={DetailView} />
       <TabOneStack.Screen name="LoginScreen" component={LoginScreen} />
+      <TabOneStack.Screen name="MultiSelector" component={MultiSelector} />
+      
     </TabOneStack.Navigator>
   );
 }

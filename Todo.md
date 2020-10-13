@@ -2,6 +2,10 @@ Issue with MainScreen ( TabOneScreen )  ListView error message:  MAke it work li
 The AllRecords/ TabOneScreen.tsx
 
 Just use the simple flat list in react native. 
+
+Flatlist - 
+https://docs.expo.io/versions/v39.0.0/react-native/flatlist/
+
 ==================================
 Detail page - finish the forms from this link 
 
