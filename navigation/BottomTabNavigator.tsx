@@ -13,9 +13,14 @@ import LowPriority from '../screens/LowPriority';
 import MidPriority from '../screens/MidPriority';
 import DetailView from '../screens/DetailView';
 
+// import CalendarEvent from '../screens/CalendarEvent';
+
+
 import LoginScreen from '../screens/LoginScreen';
 
 import MultiSelector from '../screens/Components/MultiSelector';
+
+import DateTimePicker from '../screens/DateTimePicker';
 
 
 import TabTwoScreen from '../screens/TabTwoScreen';
@@ -80,7 +85,8 @@ function TabOneNavigator() {
       <TabOneStack.Screen name="DetailView" component={DetailView} />
       <TabOneStack.Screen name="LoginScreen" component={LoginScreen} />
       <TabOneStack.Screen name="MultiSelector" component={MultiSelector} />
-      
+      <TabOneStack.Screen name="DateTimePicker" component={DateTimePicker} />
+
     </TabOneStack.Navigator>
   );
 }

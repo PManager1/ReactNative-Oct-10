@@ -1,18 +1,58 @@
-import * as React from 'react'
-import { ListItem, Icon, Avatar } from 'react-native-elements'
-import { View, Text } from 'react-native'
-import { Button } from 'react-native-elements';
+//  HighPriority 
 
+import React, { useEffect } from 'react';
+import { View, Text, Button, Platform } from 'react-native';
+import * as Calendar from 'expo-calendar';
 
-const HighPriority = () => {
-  // console.log('23- inside HighPriority ListItem=', ListItem.Content);
+export default function HighPriority() {
+  useEffect(() => {
+    (async () => {
+      const { status } = await Calendar.requestCalendarPermissionsAsync();
+      if (status === 'granted') {
+        const calendars = await Calendar.getCalendarsAsync();
+        console.log('Here are all your calendars:');
+        console.log({ calendars });
+      }
+    })();
+  }, []);
 
-  return (<>
-    <View>
-       <Text> High Priorty 2 </Text> 
+  return (
+    <View
+      style={{
+        flex: 1,
+        backgroundColor: '#fff',
+        alignItems: 'center',
+        justifyContent: 'space-around',
+      }}>
+      <Text>Calendar Module Example</Text>
+      <Button title="Create a new calendar" onPress={createCalendar} />
     </View>
-   </>
-  )
+  );
 }
 
-export default HighPriority; 
+async function getDefaultCalendarSource() {
+  const calendars = await Calendar.getCalendarsAsync();
+  const defaultCalendars = calendars.filter(each => each.source.name === 'Default');
+  return defaultCalendars[0].source;
+}
+
+async function createCalendar() {
+  const defaultCalendarSource =
+    Platform.OS === 'ios'
+      ? await getDefaultCalendarSource()
+      : { isLocalAccount: true, name: 'Expo Calendar' };
+  const newCalendarID = await Calendar.createCalendarAsync({
+    title: 'Expo Calendar',
+    color: 'blue',
+    entityType: Calendar.EntityTypes.EVENT,
+    sourceId: defaultCalendarSource.id,
+    source: defaultCalendarSource,
+    name: 'internalCalendarName',
+    ownerAccount: 'personal',
+    accessLevel: Calendar.CalendarAccessLevel.OWNER,
+  });
+  console.log(`Your new calendar ID is: ${newCalendarID}`);
+}
+
+
+

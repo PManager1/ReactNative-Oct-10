@@ -1,6 +1,8 @@
 import React, { useState } from 'react';
 import { Text, TextInput, View, StyleSheet } from 'react-native';
 
+import { Card, CardSection, Input } from '../components/common';
+
 const Field = ({ fieldName, field, value, onChangeText, error }) => {
     return (
         <View style={styles.inputContainer}>
@@ -11,6 +13,13 @@ const Field = ({ fieldName, field, value, onChangeText, error }) => {
             value={value}
             onChangeText={(text) => onChangeText(fieldName, text)}
           />
+
+        <Input
+          placeholder="555-555-5555"
+          value='something (put if phone'
+          onChangeText={text => this.props.propertyUpdate({ prop: 'phone', value: text })}
+          />
+
           <Text style={styles.error}>{error}</Text>
         </View>
       );

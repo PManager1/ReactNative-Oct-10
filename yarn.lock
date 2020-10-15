@@ -1722,6 +1722,12 @@
     sudo-prompt "^9.0.0"
     wcwidth "^1.0.1"
 
+"@react-native-community/datetimepicker@^3.0.3":
+  version "3.0.3"
+  resolved "https://registry.yarnpkg.com/@react-native-community/datetimepicker/-/datetimepicker-3.0.3.tgz#711b4cb7fd195ab7ae867b8feab176ce46e765c8"
+  dependencies:
+    invariant "^2.2.4"
+
 "@react-native-community/masked-view@0.1.10":
   version "0.1.10"
   resolved "https://registry.yarnpkg.com/@react-native-community/masked-view/-/masked-view-0.1.10.tgz#5dda643e19e587793bc2034dd9bf7398ad43d401"
@@ -1944,6 +1950,10 @@ acorn@^6.0.1:
 acorn@^7.1.0:
   version "7.4.1"
   resolved "https://registry.yarnpkg.com/acorn/-/acorn-7.4.1.tgz#feaed255973d2e77555b83dbc08851a6c63520fa"
+
+add@^2.0.6:
+  version "2.0.6"
+  resolved "https://registry.yarnpkg.com/add/-/add-2.0.6.tgz#248f0a9f6e5a528ef2295dbeec30532130ae2235"
 
 ajv@^6.12.3:
   version "6.12.6"
@@ -3244,6 +3254,10 @@ expo-asset@~8.2.0:
     md5-file "^3.2.3"
     path-browserify "^1.0.0"
     url-parse "^1.4.4"
+
+expo-calendar@^8.5.0:
+  version "8.5.0"
+  resolved "https://registry.yarnpkg.com/expo-calendar/-/expo-calendar-8.5.0.tgz#0edf57628adb56b7825ee7b78d54f376775686fb"
 
 expo-constants@~9.2.0:
   version "9.2.0"
@@ -5446,6 +5460,10 @@ mkdirp@^0.5.1:
   dependencies:
     minimist "^1.2.5"
 
+moment@^2.18.1, moment@^2.29.1:
+  version "2.29.1"
+  resolved "https://registry.yarnpkg.com/moment/-/moment-2.29.1.tgz#b2be769fa31940be9eeea6469c075e35006fa3d3"
+
 ms@2.0.0:
   version "2.0.0"
   resolved "https://registry.yarnpkg.com/ms/-/ms-2.0.0.tgz#5608aeadfc00be6c2901df5f9861788de0d597c8"
@@ -6134,6 +6152,14 @@ react-is@^16.12.0, react-is@^16.13.0, react-is@^16.7.0, react-is@^16.8.1, react-
   version "16.13.1"
   resolved "https://registry.yarnpkg.com/react-is/-/react-is-16.13.1.tgz#789729a4dc36de2999dc156dd6c1d9c18cea56a4"
 
+react-native-add-calendar-event@^4.0.0:
+  version "4.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-add-calendar-event/-/react-native-add-calendar-event-4.0.0.tgz#83959cc1953f255ae38ece84214f232fa6552c9c"
+
+react-native-calendar-events@^2.1.0:
+  version "2.1.0"
+  resolved "https://registry.yarnpkg.com/react-native-calendar-events/-/react-native-calendar-events-2.1.0.tgz#726392ce8aad9d860790286b241c3d23024e53be"
+
 react-native-elements@^2.3.2:
   version "2.3.2"
   resolved "https://registry.yarnpkg.com/react-native-elements/-/react-native-elements-2.3.2.tgz#f6b974127a3484bb46ebd98fbc012fb2208decd7"
@@ -6147,6 +6173,19 @@ react-native-elements@^2.3.2:
     prop-types "^15.7.2"
     react-native-ratings "^7.2.0"
     react-native-status-bar-height "^2.5.0"
+
+react-native-events-calendar@^1.0.8:
+  version "1.0.8"
+  resolved "https://registry.yarnpkg.com/react-native-events-calendar/-/react-native-events-calendar-1.0.8.tgz#e0e15179d025fe1c0ea923308218497c79d65945"
+  dependencies:
+    lodash "^4.17.4"
+    moment "^2.18.1"
+
+react-native-flexbox-grid@^0.3.2:
+  version "0.3.2"
+  resolved "https://registry.yarnpkg.com/react-native-flexbox-grid/-/react-native-flexbox-grid-0.3.2.tgz#8a770965360a22f50bc510aeabcd3a4e7b748ee5"
+  dependencies:
+    prop-types "^15.6.0"
 
 react-native-gesture-handler@~1.7.0:
   version "1.7.0"
@@ -6164,6 +6203,12 @@ react-native-iphone-x-helper@^1.2.1:
 react-native-linear-gradient@^2.5.6:
   version "2.5.6"
   resolved "https://registry.yarnpkg.com/react-native-linear-gradient/-/react-native-linear-gradient-2.5.6.tgz#96215cbc5ec7a01247a20890888aa75b834d44a0"
+
+react-native-modal-datetime-picker@^9.0.0:
+  version "9.0.0"
+  resolved "https://registry.yarnpkg.com/react-native-modal-datetime-picker/-/react-native-modal-datetime-picker-9.0.0.tgz#43da27d777337d5ad5045b1538d3d5b5b197a968"
+  dependencies:
+    prop-types "^15.7.2"
 
 react-native-multi-selectbox@^1.3.0:
   version "1.3.0"
@@ -7764,3 +7809,7 @@ yargs@^6.3.0:
     which-module "^1.0.0"
     y18n "^3.2.1"
     yargs-parser "^4.2.0"
+
+yarn@^1.22.10:
+  version "1.22.10"
+  resolved "https://registry.yarnpkg.com/yarn/-/yarn-1.22.10.tgz#c99daa06257c80f8fa2c3f1490724e394c26b18c"

@@ -95,12 +95,6 @@ import { Text, TextInput, View, SafeAreaView, ScrollView, StyleSheet } from 'rea
                     keyboardType: 'email-address',
                   },
                 },
-                password: {
-                  label: 'Password',
-                  inputProps: {
-                    secureTextEntry: true,
-                  },
-                },
               }}
             />
             </ScrollView>
