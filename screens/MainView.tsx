@@ -46,6 +46,15 @@ const MainView = (props) => {
   
 <View>
 
+    
+<Row size={12}>
+  <Col sm={12} md={12} lg={12}>
+    <div className="testDiv"> Test div 1 Test div 1 Test div 1 Test div 4  Test div 1 Test div 1 Test div 1 Test div 5  Test div 1 Test div 1 Test div 1 Test div 6  Test div 1 Test div 1 Test div 1 Test div 7    Test div 1 Test </div>
+    </Col>
+
+  </Row>
+
+
 <CardSection>
     <Row size={12}>
       <Col sm={3} md={3} lg={3}>
@@ -89,11 +98,6 @@ const MainView = (props) => {
       </Col>
     </Row>
   </CardSection>
-
-
-  
-
-
 
 
 
@@ -185,4 +189,8 @@ const styles = StyleSheet.create({
   label: {
     margin: 8,
   },
+  testDiv:{
+    width: '100%', 
+    backgroundColor: '#f7ddbb',
+  }
 });
